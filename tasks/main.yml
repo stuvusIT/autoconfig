@@ -1,0 +1,14 @@
+---
+- name: Create path /var/www/autoconfig
+  file:
+    path: /var/www/autoconfig
+    state: directory
+    mode: '0755'
+
+- name: Place autoconfig.php
+  template:
+    src: autoconfig.php.j2
+    dest: /var/www/autoconfig/autoconfig.php
+    owner: root
+    group: www-data
+    mode: '0644'

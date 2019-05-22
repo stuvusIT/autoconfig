@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Fritz Otlinghaus
+  description: Deploy autoconfig script for thunderbird to remote server.
+  company: stuvus (https://stuvus.uni-stuttgart.de)
+
+  license: CC-BY-SA
+
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: Debian
+        - stretch
+
+  galaxy_tags:
+    - thunderbird
+    - autoconfig
+
+dependencies: []
