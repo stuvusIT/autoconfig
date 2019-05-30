@@ -24,7 +24,8 @@ if($ldapconn) {
     // verify binding
     if ($ldapbind) {
         $mail = $_GET["emailaddress"];
-        $filter = "(mail=".ldap_escape($mail, "", LDAP_ESCAPE_FILTER).")";
+        $mail_escaped = ldap_escape($mail, "", LDAP_ESCAPE_FILTER);
+        $filter = "(|(mail=" . $mail_escaped . ")(gosaMailAlternateAddress=" . $mail_escaped . "))";
         $justthese = array("uid");
         $result = ldap_search($ldapconn, $ldaptree, $filter, $justthese) or die ("Error in search query: ".ldap_error($ldapconn));
         $data = ldap_get_entries($ldapconn, $result);
