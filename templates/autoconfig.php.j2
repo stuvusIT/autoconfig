@@ -1,4 +1,5 @@
 <?php
+// {{ ansible_managed }}
 header("Content-type: text/xml; charset=utf-8");
 //error_reporting(E_ALL);
 //ini_set('error_reporting', E_ALL);
@@ -24,7 +25,8 @@ if($ldapconn) {
     if ($ldapbind) {
         $mail = $_GET["emailaddress"];
         $filter = "(mail=".ldap_escape($mail, "", LDAP_ESCAPE_FILTER).")";
-        $justthese = array("uid");        $result = ldap_search($ldapconn,$ldaptree,$filter,$justthese) or die ("Error in search query: ".ldap_error($ldapconn));
+        $justthese = array("uid");
+        $result = ldap_search($ldapconn, $ldaptree, $filter, $justthese) or die ("Error in search query: ".ldap_error($ldapconn));
         $data = ldap_get_entries($ldapconn, $result);
         if($data["count"]==1){
             $new_address = $data[0]["uid"][0];
