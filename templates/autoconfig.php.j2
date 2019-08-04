@@ -6,7 +6,11 @@ header("Content-type: text/xml; charset=utf-8");
 //ini_set('display_errors',1);
 
 // init
-$new_address = $_GET["emailaddress"];
+if (empty($_GET["emailaddress"])){
+    exit("No email address supplied");
+}else{
+    $new_address = $_GET["emailaddress"];
+}
 
 // config
 $ldapserver = '{{ autoconfig_server }}';
@@ -59,6 +63,7 @@ ldap_close($ldapconn);
       <hostname>{{ server.hostname }}</hostname>
       <port>{{ server.port }}</port>
       <socketType>{{ server.socketType }}</socketType>
+      <authentication>{{ server.authentication }}</authentication>
       <username><?php echo $new_address; ?></username>
     </outgoingServer>
     {% endfor %}
