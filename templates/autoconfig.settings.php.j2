@@ -57,7 +57,7 @@ $cfg->username = new LDAPUsernameResolver($ldapserver, $ldapuser, $ldappass, $ld
     {% endfor %}
 
 // Example SMTP server for outgoing mail, running on port 587 (TLS) and 465 (SSL)
-    {% for server in autoconfig_incoming_server %}
+    {% for server in autoconfig_outgoing_server %}
     $cfg->addServer('smtp', '{{ server.hostname }}')
     ->withEndpoint("{{ server.socketType }}", "{{ server.port }}", "{{ server.authentication }}");
     {% endfor %}

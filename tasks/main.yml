@@ -8,15 +8,14 @@
 - name: Clone repository
   git:
     repo: 'https://github.com/stuvusIT/MailClientAutoConfig'
-    path: /var/www/autoconfig
+    dest: /var/www/autoconfig
     depth: 1
     update: true
-    version: "master"
 
 - name: Place autoconfig.php
   template:
     src: autoconfig.settings.php.j2
-    dest: /var/www/autoconfig/autoconfig.settings.php
+    dest: /var/www/autoconfig/src/autoconfig.settings.php
     owner: root
     group: www-data
     mode: '0644'
