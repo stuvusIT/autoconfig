@@ -7,7 +7,7 @@
 
 - name: Clone repository
   git:
-    repo: 'https://github.com/stuvusIT/MailClientAutoConfig'
+    repo: https://github.com/stuvusIT/MailClientAutoConfig
     dest: /var/www/autoconfig
     depth: 1
     update: true
