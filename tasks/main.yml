@@ -5,10 +5,17 @@
     state: directory
     mode: '0755'
 
+- name: Clone repository
+  git:
+    repo: https://github.com/stuvusIT/MailClientAutoConfig
+    dest: /var/www/autoconfig
+    depth: 1
+    update: true
+
 - name: Place autoconfig.php
   template:
-    src: autoconfig.php.j2
-    dest: /var/www/autoconfig/autoconfig.php
+    src: autoconfig.settings.php.j2
+    dest: /var/www/autoconfig/src/autoconfig.settings.php
     owner: root
     group: www-data
     mode: '0644'
