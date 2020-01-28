@@ -14,7 +14,7 @@ Also a running php-fpm setup.
 | `autoconfig_user_dn`         | :heavy_check_mark: | User DN for the binding user.             |
 | `autoconfig_password`        | :heavy_check_mark: | Password for binding dn user.             |
 | `autoconfig_tree`            | :heavy_check_mark: | Base DN for binding.                      |
-| `autoconfig_domain`          | :heavy_check_mark: | The domain for autoconfig                 |
+| `autoconfig_domains`         | :heavy_check_mark: | The domains for autoconfig                |
 | `autoconfig_name`            | :heavy_check_mark: | Name of the configuration                 |
 | `autoconfig_short_name`      | :heavy_check_mark: | Short name of the configuration           |
 | `autoconfig_incoming_server` | `[]`               | List of [list of dicts](#incoming-server) |
