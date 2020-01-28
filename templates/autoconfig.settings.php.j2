@@ -9,14 +9,15 @@
 
 // Add a new configuration set for a new group of domains. The argument
 // is an ID used in the Thunderbird autoconfiguration and can be anything.
-$cfg = $config->add('{{ autoconfig_domain }}');
+$cfg = $config->add({%- for domain in autoconfig_domains -%}'{{ domain }}'{{ "," if not loop.last else "" }}{%- endfor %});
+
 
 // Name and short name for the offered service, as used by Mozilla Thunderbird
 $cfg->name = '{{ autoconfig_name }}';
 $cfg->nameShort = '{{ autoconfig_short_name }}';
 
 // Domains for which these settings apply, in lowercase.
-$cfg->domains = [ '{{ autoconfig_domain }}' ];
+$cfg->domains = [{%- for domain in autoconfig_domains -%}'{{ domain }}'{{ "," if not loop.last else "" }}{%- endfor %}];
 
 // This is the username associated with the email address. If some kind of lookup
 // needs to occur to map the email address to a username, this can be done by
