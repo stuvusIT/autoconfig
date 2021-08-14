@@ -3,23 +3,24 @@
 Creates autoconfig for automatic configuration of thunderbird.
 
 ## Requirements
+
 Needs a running webserver serving the `/var/www/autoconfig/autoconfig.php` script for all requests.
 Also a running php-fpm setup.
 
 ## Role Variables
 
-| Name                         | Required/Default   | Description                               |
-|------------------------------|:------------------:|-------------------------------------------|
-| `autoconfig_server`          | :heavy_check_mark: | Ldap URI for the ldap server.             |
-| `autoconfig_user_dn`         | :heavy_check_mark: | User DN for the binding user.             |
-| `autoconfig_password`        | :heavy_check_mark: | Password for binding dn user.             |
-| `autoconfig_tree`            | :heavy_check_mark: | Base DN for binding.                      |
-| `autoconfig_domains`         | :heavy_check_mark: | The domains for autoconfig                |
-| `autoconfig_name`            | :heavy_check_mark: | Name of the configuration                 |
-| `autoconfig_short_name`      | :heavy_check_mark: | Short name of the configuration           |
-| `autoconfig_incoming_server` | `[]`               | List of [list of dicts](#incoming-server) |
-| `autoconfig_outgoing_server` | `[]`               | List of [list of dicts](#outgoing-server) |
-| `autoconfig_documentation`   | `[]`               | List of [list of dicts](#documentation)   |
+| Name                         |  Required/Default  | Description                                      |
+| ---------------------------- | :----------------: | ------------------------------------------------ |
+| `autoconfig_server`          | :heavy_check_mark: | Ldap URI for the ldap server.                    |
+| `autoconfig_user_dn`         | :heavy_check_mark: | User DN for the binding user.                    |
+| `autoconfig_password`        | :heavy_check_mark: | Password for binding dn user.                    |
+| `autoconfig_tree`            | :heavy_check_mark: | Base DN for binding.                             |
+| `autoconfig_id`              | :heavy_check_mark: | The ID used in the Thunderbird autoconfiguration |
+| `autoconfig_name`            | :heavy_check_mark: | Name of the configuration                        |
+| `autoconfig_short_name`      | :heavy_check_mark: | Short name of the configuration                  |
+| `autoconfig_incoming_server` |        `[]`        | List of [list of dicts](#incoming-server)        |
+| `autoconfig_outgoing_server` |        `[]`        | List of [list of dicts](#outgoing-server)        |
+| `autoconfig_documentation`   |        `[]`        | List of [list of dicts](#documentation)          |
 
 ### incoming-server
 
