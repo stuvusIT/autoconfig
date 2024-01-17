@@ -9,18 +9,19 @@ Also a running php-fpm setup.
 
 ## Role Variables
 
-| Name                         |  Required/Default  | Description                                      |
-| ---------------------------- | :----------------: | ------------------------------------------------ |
-| `autoconfig_server`          | :heavy_check_mark: | Ldap URI for the ldap server.                    |
-| `autoconfig_user_dn`         | :heavy_check_mark: | User DN for the binding user.                    |
-| `autoconfig_password`        | :heavy_check_mark: | Password for binding dn user.                    |
-| `autoconfig_tree`            | :heavy_check_mark: | Base DN for binding.                             |
-| `autoconfig_id`              | :heavy_check_mark: | The ID used in the Thunderbird autoconfiguration |
-| `autoconfig_name`            | :heavy_check_mark: | Name of the configuration                        |
-| `autoconfig_short_name`      | :heavy_check_mark: | Short name of the configuration                  |
-| `autoconfig_incoming_server` |        `[]`        | List of [list of dicts](#incoming-server)        |
-| `autoconfig_outgoing_server` |        `[]`        | List of [list of dicts](#outgoing-server)        |
-| `autoconfig_documentation`   |        `[]`        | List of [list of dicts](#documentation)          |
+| Name                         |  Required/Default  | Description                                                                              |
+| ---------------------------- | :----------------: | ---------------------------------------------------------------------------------------- |
+| `autoconfig_server`          | :heavy_check_mark: | Ldap URI for the ldap server.                                                            |
+| `autoconfig_user_dn`         | :heavy_check_mark: | User DN for the binding user.                                                            |
+| `autoconfig_password`        | :heavy_check_mark: | Password for binding dn user.                                                            |
+| `autoconfig_tree`            | :heavy_check_mark: | Base DN for binding.                                                                     |
+| `autoconfig_user_filter`     | :heavy_check_mark: | User filter. `%m` gets replaced with the mail address of the user. Example: `(mail=%m)`. |
+| `autoconfig_id`              | :heavy_check_mark: | The ID used in the Thunderbird autoconfiguration                                         |
+| `autoconfig_name`            | :heavy_check_mark: | Name of the configuration                                                                |
+| `autoconfig_short_name`      | :heavy_check_mark: | Short name of the configuration                                                          |
+| `autoconfig_incoming_server` |        `[]`        | List of [list of dicts](#incoming-server)                                                |
+| `autoconfig_outgoing_server` |        `[]`        | List of [list of dicts](#outgoing-server)                                                |
+| `autoconfig_documentation`   |        `[]`        | List of [list of dicts](#documentation)                                                  |
 
 ### incoming-server
 

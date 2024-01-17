@@ -32,9 +32,10 @@ $ldapserver = '{{ autoconfig_server }}';
 $ldapuser   = "{{ autoconfig_user_dn }}";
 $ldappass   = "{{ autoconfig_password }}";
 $ldaptree   = "{{ autoconfig_tree }}";
+$ldapfilter = "{{ autoconfig_user_filter }}";
 $attrs      = array("uid");
 
-$cfg->username = new LDAPUsernameResolver($ldapserver, $ldapuser, $ldappass, $ldaptree, $attrs);
+$cfg->username = new LDAPUsernameResolver($ldapserver, $ldapuser, $ldappass, $ldapfilter, $ldaptree, $attrs);
 
 // Add available servers here.
 // addServer($type, $hostname)
